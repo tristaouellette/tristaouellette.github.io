@@ -1,1 +1,438 @@
+/* ------------------------------
+   GLOBAL
+------------------------------ */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: #222;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #555;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+
+/* ------------------------------
+   HERO
+------------------------------ */
+
+.hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1050px;
+    width: 100%;
+    margin: auto;
+    padding: 90px 30px;
+
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 260px;
+    height: 320px;
+    overflow: hidden;
+    background: #eeeeee;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-photo.photo-placeholder::after {
+    content: "Add Professional Photo";
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #777;
+    font-size: 14px;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.university {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    max-width: 650px;
+    font-size: 17px;
+    color: #555;
+}
+
+.hero-buttons,
+.contact-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 32px;
+}
+
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 12px 22px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.primary-button {
+    background: #222;
+    color: white;
+    border: 1px solid #222;
+}
+
+.primary-button:hover {
+    background: #444;
+}
+
+.secondary-button {
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.secondary-button:hover {
+    border-color: #222;
+}
+
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+
+.section {
+    padding: 100px 30px;
+}
+
+.alternate {
+    background: #f7f7f7;
+}
+
+.section-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section-container.narrow {
+    max-width: 800px;
+}
+
+.section h2 {
+    font-size: clamp(32px, 4vw, 44px);
+    margin-bottom: 35px;
+    line-height: 1.25;
+}
+
+.section-container.narrow > p:not(.section-label) {
+    margin-bottom: 18px;
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* ------------------------------
+   EXPERIENCE
+------------------------------ */
+
+.experience-item {
+    padding: 35px 0;
+    border-top: 1px solid #dddddd;
+}
+
+.experience-item:last-child {
+    border-bottom: 1px solid #dddddd;
+}
+
+.experience-heading,
+.education-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 18px;
+}
+
+.experience-heading h3,
+.education-heading h3 {
+    font-size: 21px;
+}
+
+.organization {
+    color: #666;
+}
+
+.date {
+    color: #777;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.experience-item ul {
+    margin-left: 20px;
+    max-width: 800px;
+}
+
+.experience-item li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+
+/* ------------------------------
+   ACTIVITIES
+------------------------------ */
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    margin-top: 45px;
+}
+
+.activity-card {
+    border: 1px solid #dddddd;
+    padding: 25px;
+}
+
+.activity-card h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.activity-card p {
+    color: #666;
+}
+
+
+/* ------------------------------
+   EDUCATION
+------------------------------ */
+
+.education-card {
+    background: white;
+    padding: 40px;
+    border: 1px solid #e5e5e5;
+}
+
+.degree {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.gpa {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.coursework {
+    margin-top: 30px;
+}
+
+.coursework h4 {
+    margin-bottom: 15px;
+}
+
+
+/* ------------------------------
+   TAGS / SKILLS
+------------------------------ */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: #eeeeee;
+    padding: 8px 13px;
+    font-size: 13px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.skill-group h3 {
+    margin-bottom: 15px;
+}
+
+
+/* ------------------------------
+   CONTACT
+------------------------------ */
+
+.contact-section {
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+footer {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 30px;
+
+    border-top: 1px solid #eeeeee;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 60px;
+    }
+
+    .profile-photo {
+        width: 210px;
+        height: 260px;
+    }
+
+    .experience-heading,
+    .education-heading {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons,
+    .contact-links {
+        flex-wrap: wrap;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
